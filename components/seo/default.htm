@@ -12,10 +12,20 @@
     <meta http-equiv="refresh" content="0; url={{ __SELF__.redirectUrl }}">
 {% endif %}
 
-{% if __SELF__.canonicalUrl %}
-    <link rel="canonical" href="{{ __SELF__.canonicalUrl }}">
-{% endif %}
+<link rel="canonical" href="{{ __SELF__.canonicalUrl }}">
 
 {% if __SELF__.robotsIndex and __SELF__.robotsFollow %}
     <meta name="robots" content="{{ __SELF__.robotsIndex }},{{ __SELF__.robotsFollow }}">
+{% endif %}
+
+{% if __SELF__.property('includeOpenGraph') %}
+    {% partial '@opengraph.htm' %}
+{% endif %}
+
+{% if __SELF__.property('includeTwitter') %}
+    {% partial '@twitter.htm' %}
+{% endif %}
+
+{% if __SELF__.property('includeJsonLd') %}
+    {% partial '@json-ld.htm' %}
 {% endif %}

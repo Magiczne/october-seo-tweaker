@@ -4,7 +4,18 @@ return [
     'components' => [
         'seo' => [
             'name' => 'Dane SEO',
-            'description' => 'Pozwala na dostęp do danych SEO. Może być wyświetlony.'
+            'description' => 'Pozwala na dostęp do danych SEO. Może być wyświetlony.',
+            'properties' => [
+                'include_open_graph' => [
+                    'title' => 'Dołącz tagi Open Graph'
+                ],
+                'include_twitter' => [
+                    'title' => 'Dołącz tagi Twitter'
+                ],
+                'include_json_ld' => [
+                    'title' => 'Dołącz JSON-LD'
+                ]
+            ]
         ]
     ],
     'fields' => [

@@ -25,6 +25,27 @@ class Seo extends ComponentBase
         ];
     }
 
+    public function defineProperties()
+    {
+        return [
+            'includeOpenGraph' => [
+                'title' => 'magiczne.seotweaker::lang.components.seo.properties.include_open_graph.title',
+                'type' => 'checkbox',
+                'default' => true
+            ],
+            'includeTwitter' => [
+                'title' => 'magiczne.seotweaker::lang.components.seo.properties.include_twitter.title',
+                'type' => 'checkbox',
+                'default' => true
+            ],
+            'includeJsonLd' => [
+                'title' => 'magiczne.seotweaker::lang.components.seo.properties.include_json_ld.title',
+                'type' => 'checkbox',
+                'default' => true
+            ]
+        ];
+    }
+
     public function onRender()
     {
         $isBlogPage = $this->page->page->hasComponent('blogPost');

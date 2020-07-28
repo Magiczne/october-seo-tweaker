@@ -1,0 +1,11 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{ __SELF__.title }}",
+        "url": "{{ __SELF__.canonicalUrl }}",
+        {% if __SELF__.description %}
+        "description": "{{ __SELF__.description }}"
+        {% endif %}
+    }
+</script>

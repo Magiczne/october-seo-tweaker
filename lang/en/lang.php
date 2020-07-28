@@ -4,7 +4,18 @@ return [
     'components' => [
         'seo' => [
             'name' => 'SEO Data',
-            'description' => 'Allows access to SEO information. Can be rendered for meta tags.'
+            'description' => 'Allows access to SEO information. Can be rendered for meta tags.',
+            'properties' => [
+                'include_open_graph' => [
+                    'title' => 'Include Open Graph tags'
+                ],
+                'include_twitter' => [
+                    'title' => 'Include Twitter tags'
+                ],
+                'include_json_ld' => [
+                    'title' => 'Include JSON-LD'
+                ]
+            ]
         ]
     ],
     'fields' => [
