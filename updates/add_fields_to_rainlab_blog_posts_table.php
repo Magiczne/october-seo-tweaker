@@ -1,6 +1,5 @@
 <?php namespace Magiczne\SeoTweaker\Updates;
 
-use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 use October\Rain\Support\Facades\Schema;
 use System\Classes\PluginManager;
