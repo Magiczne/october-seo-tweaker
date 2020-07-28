@@ -4,3 +4,5 @@
     - add_fields_to_rainlab_blog_posts_table.php
 1.0.3:
     - Added component to display data.
+1.0.4:
+    - Added templates for Open Graph, Twitter and JSON-LD.

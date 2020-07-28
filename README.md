@@ -41,7 +41,7 @@ Insert the component into layout, and then render it in the ```<head>``` section
 <html>
 <head>
     {% component 'Seo %}
-    
+
     <!-- Other tags -->
 </head>
 <body>
@@ -49,5 +49,7 @@ Insert the component into layout, and then render it in the ```<head>``` section
 </body>
 </html>
 ```
+
+You can choose from component options whether to include Open Graph tags, Twitter tags and JSON-LD;
 
 You can also modify default component template or access fields directly.
