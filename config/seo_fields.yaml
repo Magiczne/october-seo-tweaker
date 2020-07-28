@@ -1,0 +1,33 @@
+seo_keywords:
+    label: magiczne.seotweaker::lang.fields.seo_keywords
+    tab: cms::lang.editor.meta
+
+seo_canonical_url:
+    label: magiczne.seotweaker::lang.fields.seo_canonical_url
+    tab: cms::lang.editor.meta
+    span: left
+
+seo_redirect_url:
+    label: magiczne.seotweaker::lang.fields.seo_redirect_url
+    tab: cms::lang.editor.meta
+    span: right
+
+seo_robots_index:
+    label: magiczne.seotweaker::lang.fields.robots_index
+    type: balloon-selector
+    tab: cms::lang.editor.meta
+    options:
+        index: index
+        noindex: noindex
+    span: left
+    default: index
+
+seo_robots_follow:
+    label: magiczne.seotweaker::lang.fields.robots_follow
+    type: balloon-selector
+    tab: cms::lang.editor.meta
+    options:
+        follow: follow
+        nofollow: nofollow
+    default: follow
+    span: right

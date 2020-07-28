@@ -1,0 +1,7 @@
+plugin:
+    code: 'Magiczne.SeoTweaker'
+    name: 'magiczne.seotweaker::lang.plugin.name'
+    description: 'magiczne.seotweaker::lang.plugin.description'
+    author: 'Michał Kleszczyński'
+    icon: oc-icon-ambulance
+    homepage: ''
