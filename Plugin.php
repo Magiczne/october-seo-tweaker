@@ -4,6 +4,7 @@ use Backend\Widgets\Form;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use Illuminate\Support\Facades\Event;
+use Magiczne\SeoTweaker\Components\Seo;
 use October\Rain\Exception\ApplicationException;
 use October\Rain\Support\Facades\Yaml;
 use System\Classes\PluginBase;
@@ -15,6 +16,13 @@ class Plugin extends PluginBase
     {
         $this->addFormFields();
         $this->allowTranslations();
+    }
+
+    public function registerComponents()
+    {
+        return [
+            Seo::class => 'Seo'
+        ];
     }
 
     private function addFormFields()

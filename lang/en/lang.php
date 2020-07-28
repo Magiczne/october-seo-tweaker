@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'components' => [
+        'seo' => [
+            'name' => 'SEO Data',
+            'description' => 'Allows access to SEO information. Can be rendered for meta tags.'
+        ]
+    ],
     'fields' => [
         'seo_keywords' => 'SEO Keywords',
         'seo_canonical_url' => 'Canonical URL',
