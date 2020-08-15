@@ -1,7 +1,7 @@
 plugin:
-    code: 'Magiczne.SeoTweaker'
-    name: 'magiczne.seotweaker::lang.plugin.name'
-    description: 'magiczne.seotweaker::lang.plugin.description'
-    author: 'Michał Kleszczyński'
-    icon: oc-icon-ambulance
-    homepage: ''
+    code: Magiczne.SeoTweaker
+    name: magiczne.seotweaker::lang.plugin.name
+    description: magiczne.seotweaker::lang.plugin.description
+    author: Michał Kleszczyński
+    icon: icon-ambulance
+    homepage: https://github.com/Magiczne/october-seo-tweaker

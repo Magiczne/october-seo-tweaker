@@ -6,3 +6,5 @@
     - Added component to display data.
 1.0.4:
     - Added templates for Open Graph, Twitter and JSON-LD.
+1.0.5:
+    - Fixed missing component icon
