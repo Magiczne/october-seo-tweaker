@@ -2,7 +2,7 @@
 
 ## Information
 
-This is an basic SEO Plugin for October CMS. Includes support for:
+This is a basic SEO Plugin for October CMS. Includes support for:
 - Basic CMS pages
 - [RainLab.Pages (Static Pages)](http://octobercms.com/plugin/rainlab-pages)
 - [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
