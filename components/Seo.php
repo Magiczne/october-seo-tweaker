@@ -1,6 +1,7 @@
 <?php namespace Magiczne\SeoTweaker\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 use RainLab\Pages\Classes\Router;
 use Cms\Classes\Theme;
@@ -61,6 +62,8 @@ class Seo extends ComponentBase
         } else {
             $this->getDataFromCmsPage();
         }
+
+        Event::fire('seotweaker.beforeComponentRender', [$this, $this->page]);
     }
 
     private function getDataFromBlogPost()
