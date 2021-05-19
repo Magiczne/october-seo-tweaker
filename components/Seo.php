@@ -16,6 +16,9 @@ class Seo extends ComponentBase
     public $redirectUrl;
     public $robotsFollow;
     public $robotsIndex;
+    public $ogImage;
+    public $ogImageWidth;
+    public $ogImageHeight;
 
     public function componentDetails()
     {
@@ -53,7 +56,7 @@ class Seo extends ComponentBase
 
         if ($isBlogPage !== false) {
             $this->getDataFromBlogPost();
-        } else if ($isStaticPage !== false) {
+        } elseif ($isStaticPage !== false) {
             $this->getDataFromStaticPage();
         } else {
             $this->getDataFromCmsPage();
@@ -72,6 +75,17 @@ class Seo extends ComponentBase
             $this->redirectUrl = $post->seo_redirect_url;
             $this->robotsIndex = $post->seo_robots_index;
             $this->robotsFollow = $post->seo_robots_follow;
+
+            $featuredImage = $post->featured_images->first();
+            if ($featuredImage) {
+                $this->ogImage = $featuredImage->path;
+                $localPath = $featuredImage->getLocalPath();
+                if (is_file($localPath)) {
+                    list($width, $height) = getimagesize($localPath);
+                    $this->ogImageWidth = $width;
+                    $this->ogImageHeight = $height;
+                }
+            }
         }
     }
 

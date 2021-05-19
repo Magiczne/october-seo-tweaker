@@ -5,3 +5,15 @@
 {% endif %}
 
 <meta property="og:url" content="{{ __SELF__.canonicalUrl }}">
+
+{% if __SELF__.ogImage %}
+<meta property="og:image" content="{{ __SELF__.ogImage }}">
+{% endif %}
+
+{% if __SELF__.ogImageWidth %}
+<meta property="og:image:width" content="{{ __SELF__.ogImageWidth }}">
+{% endif %}
+
+{% if __SELF__.ogImageHeight %}
+<meta property="og:image:height" content="{{ __SELF__.ogImageHeight }}">
+{% endif %}
