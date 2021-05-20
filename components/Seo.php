@@ -1,6 +1,7 @@
 <?php namespace Magiczne\SeoTweaker\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 use RainLab\Pages\Classes\Router;
 use Cms\Classes\Theme;
@@ -16,6 +17,9 @@ class Seo extends ComponentBase
     public $redirectUrl;
     public $robotsFollow;
     public $robotsIndex;
+    public $ogImage;
+    public $ogImageWidth;
+    public $ogImageHeight;
 
     public function componentDetails()
     {
@@ -58,6 +62,8 @@ class Seo extends ComponentBase
         } else {
             $this->getDataFromCmsPage();
         }
+
+        Event::fire('seotweaker.beforeComponentRender', [$this, $this->page]);
     }
 
     private function getDataFromBlogPost()
@@ -72,6 +78,17 @@ class Seo extends ComponentBase
             $this->redirectUrl = $post->seo_redirect_url;
             $this->robotsIndex = $post->seo_robots_index;
             $this->robotsFollow = $post->seo_robots_follow;
+
+            $featuredImage = $post->featured_images->first();
+            if ($featuredImage) {
+                $this->ogImage = $featuredImage->path;
+                $localPath = $featuredImage->getLocalPath();
+                if (is_file($localPath)) {
+                    [$width, $height] = getimagesize($localPath);
+                    $this->ogImageWidth = $width;
+                    $this->ogImageHeight = $height;
+                }
+            }
         }
     }
 
