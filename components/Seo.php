@@ -57,7 +57,7 @@ class Seo extends ComponentBase
 
         if ($isBlogPage !== false) {
             $this->getDataFromBlogPost();
-        } elseif ($isStaticPage !== false) {
+        } else if ($isStaticPage !== false) {
             $this->getDataFromStaticPage();
         } else {
             $this->getDataFromCmsPage();
@@ -84,7 +84,7 @@ class Seo extends ComponentBase
                 $this->ogImage = $featuredImage->path;
                 $localPath = $featuredImage->getLocalPath();
                 if (is_file($localPath)) {
-                    list($width, $height) = getimagesize($localPath);
+                    [$width, $height] = getimagesize($localPath);
                     $this->ogImageWidth = $width;
                     $this->ogImageHeight = $height;
                 }
