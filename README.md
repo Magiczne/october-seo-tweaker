@@ -53,3 +53,18 @@ Insert the component into layout, and then render it in the ```<head>``` section
 You can choose from component options whether to include Open Graph tags, Twitter tags and JSON-LD;
 
 You can also modify default component template or access fields directly.
+
+
+### Extending behavior
+
+Use events to customize any component or page property before rendering, taker absolute control of your SEO and opengraph attributes:
+
+```php
+Event::listen('seotweaker.beforeComponentRender', function ($component, $page) {
+    $component->ogImage = 'http://example.org/og-image.jpg';
+    $component->ogImageWidth = '1200';
+    $component->ogImageHeight = '630';
+    
+    $component->title = $component->title . ' - Your global site suffix';
+});
+```
