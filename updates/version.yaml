@@ -8,3 +8,6 @@
     - Added templates for Open Graph, Twitter and JSON-LD.
 1.0.5:
     - Fixed missing component icon
+1.1.0:
+    - Loading og:image from blog posts (Thanks to hugochinchilla)
+    - Extending behiavior using events (Thanks to hugochinchilla)

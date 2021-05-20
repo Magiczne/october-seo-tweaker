@@ -26,12 +26,15 @@ This is a basic SEO Plugin for October CMS. Includes support for:
 - Robots Index
 - Robots Follow
 
+### RainLab.Blog
+- og:image from post featured image
+
 ## Components
 
 ### Seo Data
 
-Component gives access to ```title```, ```description```, ```keywords```, ```canonicalUrl```, ```redirectUrl```, ```robotsFollow```
-and ```robotsIndex``` fields that are filled dynamically depending on type of site.
+Component gives access to `title`, `description`, `keywords`, `canonicalUrl`, `redirectUrl`, `robotsFollow`, 
+`robotsIndex`, `ogImage`, `ogImageWidth` and `ogImageHeight` fields that are filled dynamically depending on type of site.
 
 #### Usage
 
@@ -57,7 +60,8 @@ You can also modify default component template or access fields directly.
 
 ### Extending behavior
 
-Use events to customize any component or page property before rendering, taker absolute control of your SEO and opengraph attributes:
+Use events to customize any component or page property before rendering, 
+take absolute control of your SEO and opengraph attributes:
 
 ```php
 Event::listen('seotweaker.beforeComponentRender', function ($component, $page) {
@@ -65,6 +69,6 @@ Event::listen('seotweaker.beforeComponentRender', function ($component, $page) {
     $component->ogImageWidth = '1200';
     $component->ogImageHeight = '630';
     
-    $component->title = $component->title . ' - Your global site suffix';
+    $component->title = "{$component->title} - Your global site suffix";
 });
 ```
