@@ -81,7 +81,6 @@ class Seo extends ComponentBase
             } else {
                 $this->canonicalUrl = Request::url();
             }            
-            $this->canonicalUrl = $post->seo_canonical_url ?? Request::url();
             $this->redirectUrl = $post->seo_redirect_url;
             $this->robotsIndex = $post->seo_robots_index;
             $this->robotsFollow = $post->seo_robots_follow;
