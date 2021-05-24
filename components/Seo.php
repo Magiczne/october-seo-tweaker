@@ -73,17 +73,18 @@ class Seo extends ComponentBase
 
             $this->title = $post->title;
             $this->description = $post->excerpt;
-            $this->keywords = $post->seo_keywords;
+            $this->keywords = $post->seo_keywords;       
+            $this->redirectUrl = $post->seo_redirect_url;
+            $this->robotsIndex = $post->seo_robots_index;
+            $this->robotsFollow = $post->seo_robots_follow;
+
             // The seo_canonical_url saves empty anyway so we need to check 
             // for it instead of relying on its (non)existence
             if ( !empty($post->seo_canonical_url) ) {
                 $this->canonicalUrl = $post->seo_canonical_url;
             } else {
                 $this->canonicalUrl = Request::url();
-            }            
-            $this->redirectUrl = $post->seo_redirect_url;
-            $this->robotsIndex = $post->seo_robots_index;
-            $this->robotsFollow = $post->seo_robots_follow;
+            }
 
             $featuredImage = $post->featured_images->first();
             if ($featuredImage) {
@@ -112,8 +113,9 @@ class Seo extends ComponentBase
                 $url = substr($url, 3); 
 
                 // If we're in root then use root as URL
-                if (!strlen($url))
+                if (!strlen($url)) {
                     $url = '/';
+                }
             }
 
             $router = new Router(Theme::getActiveTheme());
@@ -126,12 +128,12 @@ class Seo extends ComponentBase
             // Updated to reflect change from $page->getViewBag() to $page->viewBag 
             // which is an array now
             $this->title = $viewBag['meta_title'] ?? $viewBag['title'];
-            $this->description = $viewBag['meta_description'] ?? NULL;
-            $this->keywords = $viewBag['seo_keywords'] ?? NULL;
+            $this->description = $viewBag['meta_description'] ?? null;
+            $this->keywords = $viewBag['seo_keywords'] ?? null;
             $this->canonicalUrl = $viewBag['seo_canonical_url'] ?? Request::url();
-            $this->redirectUrl = $viewBag['seo_redirect_url'] ?? NULL;
-            $this->robotsIndex = $viewBag['seo_robots_index'] ?? NULL;
-            $this->robotsFollow = $viewBag['seo_robots_follow'] ?? NULL;
+            $this->redirectUrl = $viewBag['seo_redirect_url'] ?? null;
+            $this->robotsIndex = $viewBag['seo_robots_index'] ?? null;
+            $this->robotsFollow = $viewBag['seo_robots_follow'] ?? null;
         }
     }
 
