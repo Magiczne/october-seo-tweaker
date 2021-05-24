@@ -28,6 +28,10 @@ class Plugin extends PluginBase
     private function addFormFields()
     {
         Event::listen('backend.form.extendFieldsBefore', function (Form $form) {
+            if ($form->isNested) {
+                return;
+            }
+                        
             $theme = Theme::getEditTheme();
 
             if (!$theme) {
