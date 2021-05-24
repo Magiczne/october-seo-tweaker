@@ -11,3 +11,6 @@
 1.1.0:
     - Loading og:image from blog posts (Thanks to hugochinchilla)
     - Extending behiavior using events (Thanks to hugochinchilla)
+1.1.1:
+    - Do not populate repeater fields in admin with SEO form (Thanks to corneliuscz)
+    - Update translation handling code (Thanks to corneliuscz)
