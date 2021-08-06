@@ -14,3 +14,5 @@
 1.1.1:
     - Do not populate repeater fields in admin with SEO form (Thanks to corneliuscz)
     - Update translation handling code (Thanks to corneliuscz)
+1.2.0:
+    - Allow PHP 8
